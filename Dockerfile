@@ -10,6 +10,8 @@ RUN yum install -y \
   php-gd php-process php-xml && \
   yum clean all
 
+COPY --from=composer/composer:latest-bin /composer /usr/bin/composer
+
 FROM base as build
 
 
